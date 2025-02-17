@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    touch-action: manipulation;
+}
+
+#gameArea {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('FNaF Floor.jpeg');
+}
+
+.walls {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.wall {
+    position: absolute;
+    background-size: cover;
+    image-rendering: pixelated;
+}
+
+.wall.horizontal {
+    height: 32px;
+    width: 100%;
+    background: url('Ruins Overworld Place Segmant 3.png') repeat-x;
+}
+
+.wall.vertical {
+    width: 32px;
+    height: 100%;
+    background: url('Ruins Overworld Place Segmant 4.png') repeat-y;
+}
+
+.monster-candy {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: url('Monster Candy.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.room {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s;
+}
+
+.door {
+    width: 80px;
+    height: 120px;
+    background: url('door1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    transition: transform 0.3s;
+    z-index: 3;
+}
+
+.door:hover {
+    transform: scale(1.1);
+}
+
+.door.left {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.door.right {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.door.top {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.door.bottom {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.entity {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('MimicGigglerTransforming.webp');
+    background-size: contain;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+#ui {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 24px;
+    z-index: 100;
+}
+
+#gameOver {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.jumpscare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('jumpscare.jpeg');
+    background-size: cover;
+    display: none;
+    z-index: 999;
+}
+
+.player {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('smile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+.player.scared {
+    background: url('frown.png');
+    background-size: contain;
+}
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.control-btn:active {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#startScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2000;
+    color: white;
+}
+
+#startButton {
+    padding: 15px 30px;
+    font-size: 24px;
+    background: #4a4a4a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#startButton:hover {
+    background: #666;
+}

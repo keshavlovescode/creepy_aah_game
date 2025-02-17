@@ -1,0 +1,35 @@
+<DOCTYPE! html>
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="startScreen">
+    <h1>Endless Rooms</h1>
+    <button id="startButton">Start Game</button>
+    <p>In this game you have to escape from a ghost.</p>
+       <p> Don't worry he cannot follow you instead he will appear next to you if you stay stationary for too long. </p>
+       <p> P.S: The ghost is someone you may know: A TIMELESS VILLAN</p>
+</div>
+<div id="gameArea">
+    <div class="walls"></div>
+    <div class="room"></div>
+    <div class="player"></div>
+</div>
+<div id="ui">
+    Rooms explored: <span id="score">0</span>
+</div>
+<div class="controls">
+    <div class="control-btn" id="leftBtn">←</div>
+    <div class="control-btn" id="rightBtn">→</div>
+    <div class="control-btn" id="upBtn">↑</div>
+    <div class="control-btn" id="downBtn">↓</div>
+</div>
+<div id="gameOver">
+    <h1>Game Over</h1>
+    <button onclick="restartGame()">Try Again</button>
+</div>
+<div class="jumpscare"></div>
+
+<script src="game.js"></script>
+</body>
+</html>
